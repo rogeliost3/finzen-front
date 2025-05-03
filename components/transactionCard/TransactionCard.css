@@ -1,0 +1,38 @@
+.transaction-line {
+    display: grid;
+    grid-template-columns: 120px 1fr 100px 120px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .transaction-card {
+    background-color: white;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+
+/* Columnas de transacciones */
+.col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .col.date,
+  .col.concepto {
+    text-align: left;
+  }
+  
+  .col.cantidad,
+  .col.saldo {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .col.saldo.negativo {
+    color: #ef4444;
+    font-weight: bold;
+  }
+  
