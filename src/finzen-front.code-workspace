@@ -10,5 +10,7 @@
 			"path": "../../../REACT/merk2"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "finzen-front"
+	}
 }

@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import transactions from './utils/data.js'
-import './App.css'
-import TransactionCard from '../components/transactionCard/TransactionCard.jsx'
+import { useState } from 'react'; //librerias externas
+import TransactionCard from '../components/transactionCard/TransactionCard.jsx';
+import TransactionList from '../components/transactionList/TransactionList.jsx';
+import transactions from './utils/data.js';
+import './App.css';
+
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <>
-    <TransactionCard transaction={transactions[0]}/>
-    <TransactionCard transaction={transactions[1]}/>
-    <TransactionCard transaction={transactions[2]}/>
-    <TransactionCard transaction={transactions[3]}/>
+      <TransactionList transactions={transactions} />    
     </>
   )
 }
