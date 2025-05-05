@@ -10,7 +10,7 @@ function TransactionCard({ transaction }) { // Componentes sin estado, stateless
                     (<span className="col cantidad negativo">{transaction.amount}</span>)
                      : 
                     (<span className="col cantidad">{transaction.amount}</span>) }
-                <span className="col saldo">{678.90}</span>
+                <span className="col saldo">{transaction.balance}</span>
             </div>
         </div>
     );
