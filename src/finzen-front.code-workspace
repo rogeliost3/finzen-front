@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "finzen-front",
+			"path": ".."
+		},
+		{
+			"name": "merk2",
+			"path": "../../../REACT/merk2"
+		},
+		{
+			"name": "finzen",
+			"path": "../../finzen"
+		},
+		{
+			"name": "golf",
+			"path": "../../golf"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "finzen-front"
+	}
+}

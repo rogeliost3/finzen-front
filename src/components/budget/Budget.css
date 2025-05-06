@@ -1,0 +1,121 @@
+.new-budget {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: background-color 0.3s;
+}
+
+.new-budget:hover {
+    background-color: #059669;
+}
+
+.year-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.year-selector button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #1e293b;
+}
+
+
+.budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.budget-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    /* Puedes ajustar esta altura fija o usar min-height */
+}
+
+.budget-card__category {
+    /* Opcional: evita que crezca demasiado el título */
+    max-height: 90px;
+    overflow: hidden;
+}
+
+.budget-card__info {
+    margin-top: auto;
+    /* Empuja esta sección al fondo */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.budget-card__info p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.budget-card h2 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.budget-card p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.icon {
+    font-size: 1.8rem;
+    color: #6dbce0;
+}
+
+/* Barra de progreso */
+/* .progress-bar {
+    background-color: #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 5px;
+} */
+.progress-bar {
+    height: 10px;
+    background-color: #eee;
+    display: flex;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+}
+
+.progress.green {
+    background-color: #10b981;
+}
+
+.progress.red {
+    background-color: #ef4444;
+}
+
+.disponible .status {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.excedido .status {
+    color: #ef4444;
+    font-weight: bold;
+}
