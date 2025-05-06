@@ -6,15 +6,15 @@ function BudgetList({ budgets }) { // Componentes sin estado, stateless
         <>
             <header>
                 <h1>Presupuestos 2025</h1>
-                <div class="year-selector">
+                <div className="year-selector">
                     <button>&lt;</button>
                     <span>2025</span>
                     <button>&gt;</button>
                 </div>
-                <button class="new-budget">+ Nuevo presupuesto</button>
+                <button className="new-budget">+ Nuevo presupuesto</button>
             </header>
 
-            <section class="budget-grid">
+            <section className="budget-grid">
                 {budgets.map((budget) => {
 
                     {/* IMPORTANTE: cuando usemos map con un componente, hay que poner un key que lo identifique*/ }

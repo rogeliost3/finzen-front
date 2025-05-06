@@ -23,11 +23,12 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  background-color: #e9752e;
 }
 
 header h1 {
   font-size: 1.8rem;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .year-selector {
@@ -90,7 +91,7 @@ header h1 {
 
 .icon {
   font-size: 1.8rem;
-  color: #6b7280;
+  color: #b69d4a;
 }
 
 /* Barra de progreso */
@@ -107,11 +108,9 @@ header h1 {
 }
 
 .disponible .progress { background-color: #10b981; }
-.limite .progress     { background-color: #f59e0b; }
 .excedido .progress   { background-color: #ef4444; }
 
 .disponible .status { color: #10b981; font-weight: bold; }
-.limite .status     { color: #f59e0b; font-weight: bold; }
 .excedido .status   { color: #ef4444; font-weight: bold; }
 
 /* ----------------------------------- */

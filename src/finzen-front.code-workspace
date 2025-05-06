@@ -1,13 +1,20 @@
 {
 	"folders": [
 		{
+			"name": "finzen-front",
 			"path": ".."
 		},
 		{
+			"name": "merk2",
+			"path": "../../../REACT/merk2"
+		},
+		{
+			"name": "finzen",
 			"path": "../../finzen"
 		},
 		{
-			"path": "../../../REACT/merk2"
+			"name": "golf",
+			"path": "../../golf"
 		}
 	],
 	"settings": {
