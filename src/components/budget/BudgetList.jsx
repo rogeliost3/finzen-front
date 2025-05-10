@@ -7,7 +7,7 @@ function BudgetList({budgets}) {
     if (budgets===undefined || budgets.length === 0) 
         return (<><p>No budgets.</p></>)
     else
-        return (
+        return ( // TODO: sacar un nuevo componente con los totales 
             <>
                 <section className="budget-grid">
                     {budgets.map((budget) => {

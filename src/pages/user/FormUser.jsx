@@ -1,30 +1,33 @@
-import { useState } from "react";
-import { useNavigate,useRouteLoaderData } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+// import { AuthContext } from "../../context/AuthContext";
 
-
-function FormUser({onSubmit, titleForm, titleButton, error}) {
+function FormUser({onSubmit, titleForm, titleButton, error, initialData}) {
 
     //Este componente de React no genera error si se pasa undefined
-    const data = useRouteLoaderData("formEditUser");
-
+    // const { userData } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const [userData, setUserData] = useState({
-        name: data?.name || "",
-        email: data?.email || "",
-        password: "",// TODO: poner oldPassword y newPassword
+    console.log("FormUser:initialData: ",initialData);
+    const [formData, setformData] = useState({
+        idUser: initialData?.idUser || 0,
+        name: initialData?.name || "",
+        email: initialData?.email || "",
+        password: "", // TODO: poner oldPassword y newPassword
     });
 
     const handleChange =(e) => {
-        setUserData({
-             ...userData,
+        console.log("FormUser:formData: ", formData);
+        setformData({
+             ...formData,
              [e.target.name]: e.target.value
         });
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        onSubmit(userData); // ✅ aquí se pasan los datos al padre
+        console.log("FormUser:formData to submit: ", formData);
+        onSubmit(formData); 
     };
 
     return (
@@ -37,7 +40,7 @@ function FormUser({onSubmit, titleForm, titleButton, error}) {
                     type="text"
                     name="name"
                     id="name"
-                    value={userData.name}
+                    value={formData.name}
                     onChange={handleChange}
                     required
                 />               
@@ -46,16 +49,18 @@ function FormUser({onSubmit, titleForm, titleButton, error}) {
                     type="email"
                     name="email"
                     id="email"
-                    value={userData.email}
+                    value={formData.email}
                     onChange={handleChange}
                     required
                 />
+                {/* TODO: poner oldPassword y newPassword y 
+                    TODO: crear endpoint de cambio de password en API */}
                 <label htmlFor="password">Enter password</label>
                 <input
                     type="password"
                     name="password"
                     id="password"
-                    value={userData.password}
+                    value={formData.password}
                     onChange={handleChange}
                     required
                 />

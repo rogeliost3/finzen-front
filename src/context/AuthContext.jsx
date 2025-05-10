@@ -5,10 +5,6 @@ import { login,logout } from "../utils/api/auth";
 import { getUserInfo } from "../utils/api/user";
 
 const AuthContext = createContext(null);
-//     userData: {},
-//     onLogin: async () => { },
-//     onLogout: () => { }
-// });
 
 const AuthProvider = ({ children }) => {
     const [userData, setUserData] = useState(null);
@@ -45,11 +41,12 @@ const AuthProvider = ({ children }) => {
         removeToken(); // borrar token del localStorage
         logout(); //borrar cookie que el backend guarda del token
         setUserData(null); //borrar datos de sesion del usuario
-        navigate("/");
-    }
+        navigate("/", { replace: true } ); 
+    }; // replace impide que se pueda volver a la pagina de login o de logout
+
     
     return (
-        <AuthContext.Provider value={{ userData: userData, onLogin: handleLogin, onLogout: handleLogout }}>
+        <AuthContext.Provider value={{ userData: userData, setUserData, onLogin: handleLogin, onLogout: handleLogout }}>
             {children}
         </AuthContext.Provider>
     );

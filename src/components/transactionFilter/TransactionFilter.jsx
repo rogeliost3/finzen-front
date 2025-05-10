@@ -9,20 +9,6 @@ function TransactionFilter({ onSearch, categories }) {
         dateEnd: ""
     });
 
-    //carga las categorias al inicio del componente
-    // useEffect(() => {
-    //     const fetchCategories = async () => {
-    //         try {
-    //             const data = await getAllCategories();
-    //             setCategories(data);
-    //         } catch (err) {
-    //             console.error("Error al obtener categorías:", err);
-    //         }
-    //     };
-
-    //     fetchCategories();
-    // }, []);
-
     //actualiza el estado filters cuando se modifica algun input del formulario filtro
     const handleChange = (e) => {
         const { name, value } = e.target;

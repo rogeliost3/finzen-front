@@ -16,7 +16,8 @@ import {
     Legend,
 } from "chart.js";
 
-
+//TODO:  Cambiar el logo y hacer mas grande el texto slogan que no se ve
+//TODO:  Hacer transparente la section que rodea a los charts, para que se vea el fondo del landing
 
 function Landing() {
     const { userData } = useContext(AuthContext);
