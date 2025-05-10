@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar.jsx";
+import TopBar from "../../components/topbar/TopBar.jsx";
 import { AuthProvider } from "../../context/AuthContext.jsx";
 
 function Root() {
     return (
         <AuthProvider>
             <header>
+                <TopBar />
                 <Navbar />
             </header>
             <main>
-                <h1>Finzen</h1>
                 <Outlet />
             </main>
             <footer>

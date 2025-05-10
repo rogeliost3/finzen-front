@@ -1,0 +1,159 @@
+/* Landing */
+
+body {
+    position: relative;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../../assets/back3.jpeg');
+    /* Pon aquí tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* capa blanca semitransparente */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+}
+
+.landing-text {
+    flex: 1;
+}
+
+.landing-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.landing-text p {
+    font-size: 1.1rem;
+    color: #374151;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+.btn.secondary:hover {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.landing-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+.dashcard {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashcard h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+}
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .landing-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .landing-logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .landing-text h1 {
+        font-size: 2rem;
+    }
+
+    .landing-text p {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

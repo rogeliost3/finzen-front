@@ -1,17 +1,32 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../utils/api/auth";
 import { saveToken, removeToken } from "../utils/localStorage";
+import { login,logout } from "../utils/api/auth";
+import { getUserInfo } from "../utils/api/user";
 
-const AuthContext = createContext({
-    userData: {},
-    onLogin: async () => { },
-    onLogout: () => { }
-});
+const AuthContext = createContext(null);
+//     userData: {},
+//     onLogin: async () => { },
+//     onLogout: () => { }
+// });
 
 const AuthProvider = ({ children }) => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
+
+    //Si se refresca la pagina se pierde el estado de logeo
+    //Esto es para solucionarlo, se ejecuta cuando se carga el componente.
+    //Llamando a getUserInfo trae los datos del usuario logeado de la API
+    useEffect(()=>{
+        handleGetUserInfo();
+    },[])
+
+    const handleGetUserInfo= async()=>{
+        const result = await getUserInfo();
+        if(result.user){
+            setUserData(result.user);
+        }
+    }
 
     const handleLogin = async (email, password) => {
         const result = await login(email, password);
@@ -19,7 +34,6 @@ const AuthProvider = ({ children }) => {
             removeToken();
             return result.error;
         } else {
-            console.log("login", result)
             setUserData(result.user);
             saveToken(result.token);
             navigate("/");
@@ -28,8 +42,9 @@ const AuthProvider = ({ children }) => {
     }
 
     const handleLogout = () => {
-        removeToken();
-        setUserData(null);
+        removeToken(); // borrar token del localStorage
+        logout(); //borrar cookie que el backend guarda del token
+        setUserData(null); //borrar datos de sesion del usuario
         navigate("/");
     }
     

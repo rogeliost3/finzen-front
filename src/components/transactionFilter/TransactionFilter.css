@@ -1,0 +1,69 @@
+.transaction-filter {
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid #e5e7eb;
+    background-color: rgb(243, 244, 246);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-filter form {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.transaction-filter select,
+.transaction-filter input[type="date"],
+.transaction-filter button {
+    flex: 1 1 0;
+    min-width: 170px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.transaction-filter select:focus,
+.transaction-filter input[type="date"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+.transaction-filter button {
+    min-width: 120px;
+    max-width: 240px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3b82f6;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.transaction-filter button:hover {
+    background-color: #2563eb;
+}
+
+.transaction-filter h4 {
+    margin:5px;
+}
+
+@media (max-width: 600px) {
+    .transaction-filter form {
+        flex-direction: column;
+    }
+
+    .transaction-filter select,
+    .transaction-filter input[type="date"],
+    .transaction-filter button {
+        width: 100%;
+        max-width: 100%;
+    }
+}

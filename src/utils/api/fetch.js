@@ -8,19 +8,22 @@ async function fetchData(route, method = "GET", bodyData = null) {
     const token = getToken();
     const options = {
         method: method,
-        headers: {}
+        headers: {"Content-Type":"application/json"}
     };
     if (token) {
         options.headers["Authorization"] = `Bearer ${token}`;
     }
     if (bodyData) {
-        options.headers["Content-Type"] = "application/json";
         options.body = JSON.stringify(bodyData);
     }
     const response = await fetch(url, options);
     const responseData = await response.json();
     if (!response.ok) {
-        responseData.status = response.status;
+          // Lanza un error con los detalles
+        throw {
+        status: response.status,
+        message: responseData.message || "Error en la petición de login"    
+        };
     }
     return responseData;
 }

@@ -6,29 +6,54 @@ import './Navbar.css';
 
 function Navbar() {
     const { route, onRouteChange } = useContext(RouteContext);
-    const { onLogout } = useContext(AuthContext);
+    const { onLogout, userData } = useContext(AuthContext);
+
     return (
-        <nav>
-            <ul className="nav-list">
-                <li className={"nav-item "} >
+        <nav className="navigation-bar">
+            <ul>
+                <li>
                     <NavLink to="/">Home</NavLink>
                 </li>
-                {/* <li >
-                    <NavLink to="/budget">Budgets</NavLink>
-                </li>
-                <li >
-                    <NavLink to="/goal">Goals</NavLink>
-                </li> */}
-                <li >
-                    <NavLink to="/login">Login</NavLink>
-                </li>
-                <li className={"nav-item "}>
-                    {/* <NavLink to="/logout">Logout</NavLink> */}
-                    <button onClick={onLogout}>Logout</button>
-                </li>
+                {userData !== null ? (
+                    <>
+                        <li>
+                            <NavLink to="/transaction">Transactions</NavLink>
+                        </li>
+                        {/* <li>
+                            <NavLink to="/goal">Goals</NavLink>
+                        </li> */}
+                        <li>
+                            <NavLink to="/budget/report">Budgets</NavLink>
+                        </li>
+                        <li className="submenu">
+                            <span>Account</span>
+                            <ul className="submenu-items">
+                                {/* <li>
+                                    <NavLink to="/user/edit">Edit profile</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/user/remove">Delete account</NavLink>
+                                </li> */}
+                                <li>
+                                    <button onClick={onLogout}>Logout</button>
+                                </li>
+                            </ul>
+                        </li>
+                    </>
+                ) : ( // Si no hay userData, mostramos Login y Register
+                    <>
+                        <li>
+                            <NavLink to="/login">Login</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/register">Register</NavLink>
+                        </li>
+                    </>
+                )}
             </ul>
         </nav>
-    )
+    );
 }
+
 
 export default Navbar;

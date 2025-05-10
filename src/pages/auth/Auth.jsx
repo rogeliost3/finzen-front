@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext.jsx";
+import "./Auth.css";
 
 function Auth() {
 

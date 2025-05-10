@@ -1,0 +1,23 @@
+/* Barra superior con el logo */
+
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e78140;
+    padding: 2px 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+.logo {
+  width: 100%;              /* Ajusta según tamaño del logo */
+  height: 100%;
+  background-image: url('../../assets/logo-apaisado-150.png'); /* Ruta relativa desde /public */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center left;
+}

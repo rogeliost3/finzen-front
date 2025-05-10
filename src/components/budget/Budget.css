@@ -29,6 +29,11 @@
 }
 
 
+.budget-filter h4 {
+    margin:5px;
+}
+
+
 .budget-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -43,19 +48,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 300px;
-    /* Puedes ajustar esta altura fija o usar min-height */
+    height: 270px;
 }
 
 .budget-card__category {
-    /* Opcional: evita que crezca demasiado el título */
     max-height: 90px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .budget-card__info {
     margin-top: auto;
-    /* Empuja esta sección al fondo */
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -79,16 +83,9 @@
 .icon {
     font-size: 1.8rem;
     color: #6dbce0;
+    margin-right: 14px;
 }
 
-/* Barra de progreso */
-/* .progress-bar {
-    background-color: #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 10px;
-    margin-top: 5px;
-} */
 .progress-bar {
     height: 10px;
     background-color: #eee;
