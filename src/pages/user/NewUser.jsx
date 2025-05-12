@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../utils/api/user";
-import FormUser from "../user/formUser";
+import FormUser from "../user/FormUser";
 
 function NewUser() {
     const navigate = useNavigate();

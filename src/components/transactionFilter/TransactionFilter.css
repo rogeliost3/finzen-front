@@ -1,10 +1,15 @@
 .transaction-filter {
-    width: 100%;
-    margin-bottom: 5px;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    right: 0;
+    height: auto;
+
     border: 1px solid #e5e7eb;
     background-color: rgb(243, 244, 246);
-    border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    z-index: 30;
+
 }
 
 .transaction-filter form {
@@ -12,13 +17,11 @@
     gap: 16px;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 4px;
-    box-sizing: border-box;
+    padding: 10px;
 }
 
 .transaction-filter select,
-.transaction-filter input[type="date"],
-.transaction-filter button {
+.transaction-filter input[type="date"] {
     flex: 1 1 0;
     min-width: 170px;
     padding: 8px 12px;
@@ -37,12 +40,15 @@
 }
 
 .transaction-filter button {
+    flex: 1 1 0;
     min-width: 120px;
-    max-width: 240px;
+    padding: 8px 12px;
+    font-size: 1rem;
     font-weight: bold;
     color: #ffffff;
     background-color: #3b82f6;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
@@ -52,14 +58,39 @@
 }
 
 .transaction-filter h4 {
-    margin:5px;
+    margin: 5px 0 0 15px;
+}
+
+
+@media (min-width: 700px) {
+    .transactions-container {
+        padding-top: 0px !important;
+    }
+    .transactions-header {
+        top: 219px !important;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 699px) {
+    .transactions-container {
+        padding-top: 55px !important;
+    }
+    .transactions-header {
+        top: 273px !important;
+    }
 }
 
 @media (max-width: 600px) {
+    /*600px o menos*/
+    .transactions-container {
+        padding-top: 170px !important;
+    }
+    .transactions-header {
+        top: 387px !important;
+    }
     .transaction-filter form {
         flex-direction: column;
     }
-
     .transaction-filter select,
     .transaction-filter input[type="date"],
     .transaction-filter button {

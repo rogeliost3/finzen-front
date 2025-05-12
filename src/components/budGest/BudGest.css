@@ -1,0 +1,226 @@
+/* === Estructura general === */
+.goal-page-container {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+/* === GoalPanel === */
+.panel {
+ position: fixed;
+    top: 130px;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: grid;
+    background-color: rgb(243, 244, 246);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px 30px;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px 8px 0 0;
+    z-index: 30;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+.merge2 {
+    grid-column: span 2;
+}
+
+.merge-all {
+    grid-column: -1/1;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-right:1rem;
+}
+
+.label {
+    display:flex;
+    flex-direction: row;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+.input {
+    padding: 2px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.button {
+    width: 29%;
+    padding: 10px 12px;
+    border: none;
+    margin: 5px 2%;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button.save {
+    background-color: #65d17e;
+}
+
+.button.delete {
+    background-color: #e7737f;
+}
+
+.button.new {
+    background-color: #348ae6;
+}
+
+.button.cancel {
+    background-color: #b9ec7e;
+}
+
+.button.income {
+    background-color: #a0a0a0;
+}
+
+/* === GoalList y GoalCard === */
+.goals-container {
+    /* position:fixed; */
+    /* top: 300px; */
+    width: 100%;
+    max-width: 100%;
+    max-height: 90vh;
+    /* overflow-y: auto; */
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    z-index: 0
+}
+
+.goals-header {
+    position: fixed;
+        padding: 0 20px;
+        left:0;
+    width: 100%;
+    top: 448px;
+    display: grid;
+    grid-template-columns: 120px 1fr 100px 120px 120px;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    font-size: 0.95rem;
+    background-color: #f3f4f6;
+    font-weight: bold;
+    /* position: sticky; */
+    z-index: 999;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.col.left {
+    text-align: left;
+}
+
+.col.right {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.col.right.negativo {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.goal-list {
+    /* display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 16px;
+    margin-top: 38px; */
+    width: 100%;
+    max-width: 100%;
+    max-height: 80vh;
+    /* padding-top:222px; */
+    /* overflow-y: auto; */
+    border: 1px solid #e5e7eb;
+    background: white;
+}
+
+
+.goal-card {
+    display: grid;
+    grid-template-columns: 120px 1fr 100px 120px 120px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 17px;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+.goal-card:hover {
+    background-color: #f0f8ff;
+}
+
+.goal-card.selected {
+    background-color: #cce4ff;
+    font-weight: bold;
+}
+
+
+ @media (min-width: 1112px) {
+    .goal-list {
+        padding-top: 222px !important;
+    }
+    .goals-header {
+        top: 299px !important;
+    }
+
+}
+
+@media (min-width: 832px) and (max-width: 1111px) {
+    .goal-list {
+        padding-top: 276px !important;
+    }
+    .goals-header {
+        top: 353px !important;
+    }
+
+}
+
+
+@media (min-width: 552px) and (max-width: 831px) {
+    .goal-list {
+        padding-top: 306px !important;
+    }
+    .goals-header {
+        top: 383px !important;
+    }
+
+}
+
+@media (max-width: 551px) {
+  
+    .goal-list {
+        padding-top: 338px !important;
+    }
+    .goals-header {
+        top: 416px !important;
+    } 
+
+} 

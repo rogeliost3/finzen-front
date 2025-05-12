@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./Landing.css";
-import logo from "../../assets/logo-apaisado.png";
+import logo from "../../assets/logo-apaisado-200.png";
 
 import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
 import {
@@ -16,7 +16,7 @@ import {
     Legend,
 } from "chart.js";
 
-//TODO:  Cambiar el logo y hacer mas grande el texto slogan que no se ve
+
 //TODO:  Hacer transparente la section que rodea a los charts, para que se vea el fondo del landing
 
 function Landing() {

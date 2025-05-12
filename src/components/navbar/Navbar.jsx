@@ -9,6 +9,7 @@ function Navbar() {
     const { onLogout, userData } = useContext(AuthContext);
 
     return (  //TODO: Hacer menu hamburguesa
+        
         <nav className="navigation-bar">
             <ul>
                 <li>
@@ -19,26 +20,26 @@ function Navbar() {
                         <li>
                             <NavLink to="/transaction">Transactions</NavLink>
                         </li>
-                        {/* <li>
+                        <li>
                             <NavLink to="/goal">Goals</NavLink>
-                        </li> */}
+                        </li>
                         <li>
                             <NavLink to="/budget/report">Budgets</NavLink>
                         </li>
-                        <li className="submenu">
-                            <span><i className={"fa-solid fa-user-tie"}></i>{" "+userData.name.split(' ')[0]}</span>
+                        <li className="submenu"> {/* TODO: Submenú queda por debajo de panel de goals */}
+                            <span><i className={"fa-solid fa-user-tie"}></i>{" " + userData.name.split(' ')[0]}</span>
                             <ul className="submenu-items">
-                                
+
                                 <li>
                                     <NavLink to="/user/edit">Edit profile</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/user/remove">Delete account</NavLink>
-                                </li> 
+                                </li>
                                 <li>
                                     <button onClick={onLogout}>Logout</button>
                                 </li>
-                                
+
                             </ul>
                         </li>
                     </>

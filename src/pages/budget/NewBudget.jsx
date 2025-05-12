@@ -26,7 +26,9 @@ function NewBudget(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         // budgetData.month = budgetData.month.split("-")[1];
+        console.log("budgetData a guardar: ", budgetData);
         const result=await createBudget(budgetData);
+        console.log("result: ", result);
         navigate("/budget/report");
     }
 

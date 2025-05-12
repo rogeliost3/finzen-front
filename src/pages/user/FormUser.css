@@ -1,4 +1,4 @@
-/* .auth-page {
+.auth-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,11 +11,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-} */
+}
 
 .auth-section {
     max-width: 400px;
-    margin: 80px auto;
+    /* margin: 80px auto; */
     padding: 32px;
     border: 1px solid #e5e7eb;
     background-color: #f9fafb;

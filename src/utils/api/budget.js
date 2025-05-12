@@ -6,7 +6,13 @@ async function getBudgetsReport(year){
 }
 
 async function createBudget(budgetData) {
+    budgetData.limitAmount = parseFloat(budgetData.limitAmount);
     const { idCategory, limitAmount, month } = budgetData;
+        console.log("budgetData: ", budgetData);
+        console.log("idCategory: ", idCategory);
+        console.log("limitAmount: ", limitAmount);
+        console.log("month: ", month);
+
     const result = await fetchData("/budget/create", "POST",{idCategory, limitAmount, month});
     // if (!result) {
     //     throw new Error("Error al crear el presupuesto");

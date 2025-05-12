@@ -13,6 +13,7 @@ function BudgetPage() {
         // try {
             const data = await getBudgetsReport(year);
             setBudgets(data);
+            console.log(data);
         // } catch (error) {
         //     console.error("Error al buscar budgets:", error);
         // }

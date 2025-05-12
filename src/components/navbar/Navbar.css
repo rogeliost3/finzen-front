@@ -1,7 +1,8 @@
 /* Estilos para el menú de navegación */
 .navigation-bar {
   position: fixed;
-  top: 50px;
+  top: 80px;
+  height:50px;
   /* Justo debajo de la barra superior */
   left: 0;
   width: 100%;
@@ -106,3 +107,4 @@
   color: #3b82f6;
   background-color: #f9fafb;
 }
+

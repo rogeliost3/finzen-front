@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { getAllCategories } from "../../utils/api/category.js";
 import './TransactionFilter.css';
 
 function TransactionFilter({ onSearch, categories }) {
@@ -10,6 +9,7 @@ function TransactionFilter({ onSearch, categories }) {
     });
 
     //actualiza el estado filters cuando se modifica algun input del formulario filtro
+    // TODO: hacer que categories aparezca por defecto All seleccionada para ver todos los movimientos
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFilters((prev) => ({
@@ -56,6 +56,8 @@ function TransactionFilter({ onSearch, categories }) {
                     onClick={() => onSearch(filters)}>
                     Buscar
                 </button>
+                {/* TODO: Añadir boton para descargar archivo en xls */}
+                {/* TODO: Añadir boton para importar archivo en xls */}
             </form>
         </section>
     );

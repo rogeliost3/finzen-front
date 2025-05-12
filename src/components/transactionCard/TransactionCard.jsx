@@ -7,13 +7,13 @@ function TransactionCard({ transaction }) { // Componentes sin estado, stateless
                 <span className="col date">{transaction.date}</span>
                 <span className="col concepto">{transaction.description}</span>
                 { transaction.type == "expense" ? 
-                    (<span className="col cantidad">{-transaction.amount}</span>)
+                    (<span className="col cantidad">{parseFloat(-transaction.amount).toFixed(2)}</span>)
                      : 
-                    (<span className="col cantidad">{transaction.amount}</span>) }
+                    (<span className="col cantidad">{parseFloat(transaction.amount).toFixed(2)}</span>) }
                 { transaction.balance < 0 ? 
-                    (<span className="col saldo negativo">{transaction.balance}</span>) 
+                    (<span className="col saldo negativo">{parseFloat(transaction.balance).toFixed(2)}</span>) 
                     : 
-                    (<span className="col saldo">{transaction.balance}</span>) }
+                    (<span className="col saldo">{parseFloat(transaction.balance).toFixed(2)}</span>) }
             </div>
         </div>
     );

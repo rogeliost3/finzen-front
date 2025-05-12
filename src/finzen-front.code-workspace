@@ -18,6 +18,12 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "finzen-front"
+		"liveServer.settings.multiRootWorkspaceName": "finzen-front",
+		"search.exclude": {
+			"**/merk2": true
+		},
+		"files.watcherExclude": {
+			"**/node_modules": true
+		}
 	}
 }

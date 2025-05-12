@@ -10,10 +10,12 @@ function BudgetList({budgets}) {
         return ( // TODO: sacar un nuevo componente con los totales 
             <>
                 <section className="budget-grid">
-                    {budgets.map((budget) => {
-                        return <BudgetCard budget={budget} key={budget.idBudget} />
-                    })
-                    }
+                    {budgets
+                        //no extraer la seccion totals porque genera una Card vacia
+                        .filter(budget => !budget.totals) 
+                        .map((budget, index) => (
+                            <BudgetCard budget={budget} key={index} />
+                        ))}
                 </section>
             </>
         );

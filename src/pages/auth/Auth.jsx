@@ -31,28 +31,30 @@ function Auth() {
     }
 
     return (
-        <section className="auth-section">
-            <h1>Login</h1>
-            <p className="error">{error}</p>
-            <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={userData.email}
-                    onChange={handleUserEmail}
-                />
-                <label htmlFor="password">Contraseña</label>
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    value={userData.password}
-                    onChange={handleUserPassword}
-                />
-                <button type="submit">Acceder</button>
-            </form>
+        <section className="auth-page">
+            <section className="auth-section">
+                <h1>Login</h1>
+                <p className="error">{error}</p>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        value={userData.email}
+                        onChange={handleUserEmail}
+                    />
+                    <label htmlFor="password">Contraseña</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        value={userData.password}
+                        onChange={handleUserPassword}
+                    />
+                    <button type="submit">Acceder</button>
+                </form>
+            </section>
         </section>
     );
     

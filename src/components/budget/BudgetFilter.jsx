@@ -21,7 +21,7 @@ function BudgetReportFilter({ onSearch, year, setYear }) {
     };
 
     return (
-        <section className="transaction-filter">
+        <section className="budget-filter">
             <h4>Annual budget report</h4>
             <form>
                  <div className="year-selector">
