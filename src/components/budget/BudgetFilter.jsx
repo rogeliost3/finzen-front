@@ -25,13 +25,11 @@ function BudgetReportFilter({ onSearch, year, setYear }) {
             <h4>Annual budget report</h4>
             <form>
                  <div className="year-selector">
-                   
                     <button onClick={decYear}><i className={"fa-solid fa-arrow-left"}/></button>
                     <span>{year}</span>
                     <button onClick={incYear}><i className={"fa-solid fa-arrow-right"}/></button>
                  </div>
                  <button className="new-budget" onClick={handleNewBudget}>+ New Budget</button> 
-
             </form>
         </section>
     );

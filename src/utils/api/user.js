@@ -18,7 +18,6 @@ async function createUser(userData) {
     return result;
 }
 async function editUser(idUser, userData) {
-    console.log("users:editUser:", idUser, userData);
     const result = await fetchData("/user/" + idUser + "/edit", "PUT", userData);
     return result;
 }

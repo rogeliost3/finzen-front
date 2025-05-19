@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthContext";
 import "./Landing.css";
 import logo from "../../assets/logo-apaisado-200.png";
 
+//imports de los charts
 import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
 import {
     Chart as ChartJS,
@@ -17,11 +18,17 @@ import {
 } from "chart.js";
 
 
-//TODO:  Hacer transparente la section que rodea a los charts, para que se vea el fondo del landing
+//TODO: Hacer transparente la section que rodea a los charts, para que se vea el fondo del landing
+//TODO: Meterle los datos del usuario logeado a los charts
+//TODO: Mas opacidad al recuadro en Landig para que se lea mejor el texto y ponerle sombra de contraste.
 
+// Landign page de usuario logeado
 function Landing() {
+
+    //tomamos el usuario logeado del context
     const { userData } = useContext(AuthContext);
 
+    // Sección de definición de los charts
     ChartJS.register(
         BarElement,
         CategoryScale,
@@ -79,6 +86,7 @@ function Landing() {
         ],
     };
 
+    //Si está logeado mostrar el dashboard con los charts del usuario, sino la landing page.
     return (
         <>
             {!userData ? (

@@ -1,5 +1,6 @@
 import "./TransactionCard.css";
 
+/* Fila de datos de transacciones */
 function TransactionCard({ transaction }) { // Componentes sin estado, stateless
     return (
         <div className="transaction-card">

@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext.jsx";
 import "./Auth.css";
 
+// Página de autenticacion
 function Auth() {
 
     const [isRegister, setIsRegister] = useState(false);
@@ -13,6 +14,7 @@ function Auth() {
 
     const { onLogin } = useContext(AuthContext);
 
+    //Manejadores de entrada de datos
     const handleUserPassword = (event) => {
         const newPassword = event.target.value;
         const newState = { ...userData, password: newPassword }
@@ -25,7 +27,6 @@ function Auth() {
     }
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("login", userData);
         const result = await onLogin(userData.email, userData.password);
         setError(result);
     }

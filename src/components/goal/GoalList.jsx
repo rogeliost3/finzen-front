@@ -1,7 +1,7 @@
 import GoalCard from "./GoalCard";
 import "./Goal.css";
 
-
+// Lista de goals, usa GoalCard
 function GoalList({ goals, onSelect, idSelected }) {
 return (
   <section className="goals-container">

@@ -6,6 +6,7 @@ import TransactionList from "../../components/transactionList/TransactionList.js
 import fetchData from "../../utils/api/fetch.js";
 import "./TransactionPage.css";
 
+// Página de transacciones, lista y filtro
 function TransactionPage() {
     const { userData } = useContext(AuthContext);
     const [transactions, setTransactions] = useState([]);

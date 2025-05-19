@@ -1,4 +1,6 @@
-.transaction-line {
+/* Fila de datos de transacciones */
+
+.col {
   display: grid;
   grid-template-columns: 120px 1fr 100px 120px;
   align-items: center;
@@ -12,8 +14,8 @@
   border-bottom: 1px solid #f3f4f6;
 }
 
+/* Columnas de datos de transacciones */
 
-/* Columnas de transacciones */
 .col {
   overflow: hidden;
   text-overflow: ellipsis;

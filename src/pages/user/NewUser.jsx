@@ -4,19 +4,24 @@ import { createUser } from "../../utils/api/user";
 import FormUser from "../user/FormUser";
 
 function NewUser() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [error, setError] = useState(null);
-    
-    const handleSubmit = async (userData) => {
-        const result=await createUser(userData);
-        if (result)
-            navigate("/login",{replace:true, state:{data:result}})
-        else
-            setError(result);
-    }
+  const [error, setError] = useState(null);
 
-    return (<FormUser onSubmit={handleSubmit} titleForm={"New user"} titleButton={"Create new user"} error= {error}/>)
+  const handleSubmit = async (userData) => {
+    const result = await createUser(userData);
+    if (result) navigate("/login", { replace: true, state: { data: result } });
+    else setError(result);
+  };
+
+  return (
+    <FormUser
+      onSubmit={handleSubmit}
+      titleForm={"New user"}
+      titleButton={"Create new user"}
+      error={error}
+    />
+  );
 }
 
 export default NewUser;

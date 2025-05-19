@@ -1,17 +1,4 @@
-/* .auth-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
-    position: relative;
-    padding: 0;
-    height: 100vh;
-    background-image: url('../../assets/back3.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
+/* Página de autenticación */
 
 .auth-section {
     max-width: 400px;

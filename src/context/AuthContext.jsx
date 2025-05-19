@@ -4,6 +4,7 @@ import { saveToken, removeToken } from "../utils/localStorage";
 import { login,logout } from "../utils/api/auth";
 import { getUserInfo } from "../utils/api/user";
 
+// Envuelve la app con los datos del usuario logeado
 const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {

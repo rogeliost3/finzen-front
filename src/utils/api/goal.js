@@ -16,13 +16,11 @@ async function getGoalsReport() {
 }
 
 async function createGoal(goalData) {
-    console.log("goalData: ", goalData);
 
     const { income, ...safeData } = goalData;
     safeData.currentAmount = 0;
     safeData.targetAmount = parseFloat(safeData.targetAmount);
 
-    console.log("safeData: ", safeData);
     const result = await fetchData("/goal/create", "POST", safeData);
     return result;
 }

@@ -4,18 +4,20 @@ import { createBudget } from "../../utils/api/budget.js";
 import "../auth/Auth.css";
 import "../../components/transactionFilter/TransactionFilter.css";
 
+// Página de creación de nuevo presupuesto
 function NewBudget(){
     const categories=useLoaderData();
     const navigate = useNavigate();
 
 
-    //crear el estado de datos del formulario y valore por defecto
+    //crear el estado de datos del formulario y valores por defecto
     const[budgetData, setBudgetData] = useState({
         idCategory: "",
         limitAmount: "",
         month: ""
     }); 
 
+    // Manejador genérico de cambios en formulario
     const handleChange =(e) => {
         setBudgetData({
              ...budgetData,
@@ -23,12 +25,10 @@ function NewBudget(){
         });
     }
 
+    //Manejador del evento submit
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // budgetData.month = budgetData.month.split("-")[1];
-        console.log("budgetData a guardar: ", budgetData);
-        const result=await createBudget(budgetData);
-        console.log("result: ", result);
+        await createBudget(budgetData);
         navigate("/budget/report");
     }
 

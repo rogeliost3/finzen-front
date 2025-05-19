@@ -1,6 +1,8 @@
 import React from "react";
 import "./ConfirmDialog.css";
 
+// Componente de confirmacion si/no generico, personalizable
+
 function ConfirmDialog({ 
   title = "Confirm action", 
   message = "Are you sure?", 

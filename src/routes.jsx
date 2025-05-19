@@ -12,7 +12,7 @@ import { getAllCategories } from './utils/api/category.js';
 import Landing from "./pages/root/Landing.jsx";
 import { getAllGoals } from "./utils/api/goal.js";
 
-// TODO: Eliminar el fondo de todas las pantallas excepto de la Root
+
 const router  = createBrowserRouter([
     {
         path : "/",

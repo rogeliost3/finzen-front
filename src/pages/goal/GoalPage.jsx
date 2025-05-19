@@ -4,12 +4,15 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { createGoal, editGoal, removeGoal } from "../../utils/api/goal.js";
 
+//TODO: Comportamiento de la visibilidad de los botones
+
+
 function GoalPage() {
     const loadedGoals = useLoaderData(); // cargar los datos traidos desde el loader de routes
     const [goals, setGoals] = useState(loadedGoals); // convertirlos a mutables
     const [selected, setSelected] = useState(null); // saber si el card está seleccionado en la lista
     const [isNew, setIsNew] = useState(false);  // saber si al pulsar el boton Save Changes es una creacion o edicion
-    const [income, setIncome] = useState(0);
+    const [income, setIncome] = useState(0); // cantidad a ingresar en un goal, independiente de selected, sin implementar
 
     const handleSelect = (goal) => {
         setSelected(goal);
@@ -113,7 +116,6 @@ function GoalPage() {
     const handleDelete = async () => {
         if (!selected?.idGoal) return;
         const removedGoal = await removeGoal(selected.idGoal);
-        console.log(removedGoal);
         if (removedGoal) {
             setGoals((prev) => prev.filter((item) => item.idGoal !== selected.idGoal));
             setSelected(null);
@@ -128,19 +130,19 @@ function GoalPage() {
     };
 
     return (
-    <div className="goal-page-container">
-        <GoalPanel 
-        goalSelected={selected}
-        onChange={setSelected}
-        onSave={handleSave}
-        onDelete={handleDelete}
-        onNew={handleNew}
-        onIncome={handleIncome}
-        onCalcel={handleCancel}
-        isNew={isNew}
-        />
-        <GoalList goals={goals} onSelect={handleSelect} idSelected={selected?.idGoal} />
-    </div>
+        <div className="goal-page-container">
+            <GoalPanel 
+            goalSelected={selected}
+            onChange={setSelected}
+            onSave={handleSave}
+            onDelete={handleDelete}
+            onNew={handleNew}
+            onIncome={handleIncome}
+            onCalcel={handleCancel}
+            isNew={isNew}
+            />
+            <GoalList goals={goals} onSelect={handleSelect} idSelected={selected?.idGoal} />
+        </div>
     );
 
 }

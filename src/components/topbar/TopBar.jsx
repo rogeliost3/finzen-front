@@ -1,4 +1,5 @@
-// TopBar.jsx
+// Imagen superior fija con logotipo
+
 import './TopBar.css';
 
 function TopBar() {

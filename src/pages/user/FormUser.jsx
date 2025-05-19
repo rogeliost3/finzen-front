@@ -9,7 +9,6 @@ function FormUser({onSubmit, titleForm, titleButton, error, initialData}) {
     // const { userData } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    console.log("FormUser:initialData: ",initialData);
     const [formData, setformData] = useState({
         idUser: initialData?.idUser || 0,
         name: initialData?.name || "",
@@ -18,7 +17,6 @@ function FormUser({onSubmit, titleForm, titleButton, error, initialData}) {
     });
 
     const handleChange =(e) => {
-        console.log("FormUser:formData: ", formData);
         setformData({
              ...formData,
              [e.target.name]: e.target.value
@@ -27,7 +25,6 @@ function FormUser({onSubmit, titleForm, titleButton, error, initialData}) {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log("FormUser:formData to submit: ", formData);
         onSubmit(formData); 
     };
 

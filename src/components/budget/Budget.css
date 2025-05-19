@@ -3,6 +3,8 @@ body {
     background-attachment: fixed;
 }
 
+/* budged filter */
+
 .budget-filter {
     width: 100%;
     position: fixed;
@@ -41,22 +43,11 @@ body {
     background-color: #2563eb;
 }
 
+.budget-filter h4 {
+    margin:5px 0 0 15px
+}
 
-/* .new-budget {
-    background-color: #10b981;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 1rem 0;
-    transition: background-color 0.3s;
-} */
-
-/* .new-budget:hover {
-    background-color: #059669;
-} */
+/* year selector */
 
 .year-selector {
     display: flex;
@@ -72,11 +63,7 @@ body {
     color: #1e293b;
 }
 
-
-.budget-filter h4 {
-    margin:5px 0 0 15px
-}
-
+/* budget grid */
 
 .budget-grid {
     display: grid;
@@ -84,6 +71,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
+
+/* budget card */
 
 .budget-card {
     background-color: white;
@@ -161,6 +150,8 @@ body {
     color: #ef4444;
     font-weight: bold;
 }
+
+/* resposive */
 
 @media (max-width: 600px) {
     .budget-filter form {

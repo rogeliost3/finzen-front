@@ -26,10 +26,11 @@ function Navbar() {
                         <li>
                             <NavLink to="/budget/report">Budgets</NavLink>
                         </li>
+
+                        {/* Submenu del usuario */}
                         <li className="submenu"> {/* TODO: Submenú queda por debajo de panel de goals */}
                             <span><i className={"fa-solid fa-user-tie"}></i>{" " + userData.name.split(' ')[0]}</span>
                             <ul className="submenu-items">
-
                                 <li>
                                     <NavLink to="/user/edit">Edit profile</NavLink>
                                 </li>
